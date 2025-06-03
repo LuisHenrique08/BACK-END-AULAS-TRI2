@@ -1,7 +1,8 @@
 const frutas = [
     {nome: "uva", preco: 12.90, quantidade: 50},
     {nome: "laranja lima", preco: 5.50, quantidade: 120},
-    {nome: "abacaxi", preco: 10, quantidade: 12}
+    {nome: "abacaxi", preco: 10, quantidade: 12},
+    {nome: "uva", preco: 14.90, quantidade: 10}
 ]
 console.log(frutas)
 //.find -> encontra um elemento
@@ -15,6 +16,8 @@ console.log(encontrado)
 const filtrado = frutas.filter((fruta) => frutas.nome === "uva")
 console.log(filtrado)
 
+// usando .map crie um desconto de 50% para cada fruta.
+
 const frutasComDesconto = frutas.map((fruta) => {
     return {
       ...fruta,               
@@ -23,7 +26,9 @@ const frutasComDesconto = frutas.map((fruta) => {
     });
     console.log(frutasComDesconto);
 
-    const frutasOrdenadas = frutasComDesconto.sort((a, b) => {
+//usando .sort ordene em ordem alfabetica
+    
+const frutasOrdenadas = frutasComDesconto.sort((a, b) => {
         if (a.nome.toLowerCase() < b.nome.toLowerCase()) {
           return -1; 
         }
@@ -33,3 +38,4 @@ const frutasComDesconto = frutas.map((fruta) => {
         return 0; 
       });
       console.log(frutasOrdenadas);
+
